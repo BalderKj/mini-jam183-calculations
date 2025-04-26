@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqec4b1ncuvfv"]
+
+[ext_resource type="Script" uid="uid://5irgprkm7eyf" path="res://scripts/projectile.gd" id="1_aihi3"]
+[ext_resource type="Texture2D" uid="uid://5vxiunev54dx" path="res://Art/dungeonSprites_ v1.5/demonHand_.png" id="2_c3q3r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d4467"]
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_aihi3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c3q3r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_d4467")

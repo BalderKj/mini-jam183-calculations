@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemySpawnEntry" load_steps=3 format=3 uid="uid://mq1l0m40l084"]
+
+[ext_resource type="Script" uid="uid://bg7neswcnsykv" path="res://scripts/enemy_spawn_entry.gd" id="1_limrp"]
+[ext_resource type="Resource" uid="uid://vvyd5uj2us8s" path="res://characters/Enemies/enemy_types/number0.tres" id="2_rtjt0"]
+
+[resource]
+script = ExtResource("1_limrp")
+stats = ExtResource("2_rtjt0")
+spawn_weight = 1
+min_wave = 1
+metadata/_custom_type_script = "uid://bg7neswcnsykv"

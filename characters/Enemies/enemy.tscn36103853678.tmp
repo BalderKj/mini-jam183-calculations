@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bafxrp63n1hpa"]
+
+[ext_resource type="Script" uid="uid://cx7pbkg6cdxhf" path="res://characters/Enemies/Enemy.gd" id="1_v3fu7"]
+[ext_resource type="Resource" uid="uid://vvyd5uj2us8s" path="res://characters/Enemies/enemy_types/number0.tres" id="2_5shbe"]
+[ext_resource type="SpriteFrames" uid="uid://bnqut7ub4ng76" path="res://characters/animations/enemy_animations.tres" id="3_rqyxk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhupr"]
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_v3fu7")
+stats = ExtResource("2_5shbe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_nhupr")
+
+[node name="enemy legs" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_rqyxk")
+animation = &"enemy_idle"
+
+[node name="enemyTop" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_rqyxk")
+animation = &"zero_bob"
+frame_progress = 0.82872

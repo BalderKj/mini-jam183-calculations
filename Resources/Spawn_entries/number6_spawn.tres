@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemySpawnEntry" load_steps=3 format=3 uid="uid://dq2mfqvclafu2"]
+
+[ext_resource type="Script" uid="uid://bg7neswcnsykv" path="res://scripts/enemy_spawn_entry.gd" id="1_v8u6q"]
+[ext_resource type="Resource" uid="uid://cuv43gm8lder4" path="res://characters/Enemies/enemy_types/number6.tres" id="2_v8u6q"]
+
+[resource]
+script = ExtResource("1_v8u6q")
+stats = ExtResource("2_v8u6q")
+spawn_weight = 1
+min_wave = 1
+metadata/_custom_type_script = "uid://bg7neswcnsykv"

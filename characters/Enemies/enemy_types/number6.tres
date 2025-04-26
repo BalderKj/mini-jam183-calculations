@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://cuv43gm8lder4"]
+
+[ext_resource type="Script" uid="uid://bhptr3a3jbtcv" path="res://scripts/EnemyStats.gd" id="1_r04dx"]
+
+[resource]
+script = ExtResource("1_r04dx")
+name = "number 6"
+health = 10.0
+speed = 50.0
+type = 6
+metadata/_custom_type_script = "uid://bhptr3a3jbtcv"

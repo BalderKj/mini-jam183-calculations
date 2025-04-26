@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://coh7nq8uwm8pf"]
+
+[ext_resource type="Script" uid="uid://b8pqgotoxclup" path="res://characters/Player/player.gd" id="1_8gp0o"]
+[ext_resource type="SpriteFrames" uid="uid://dek1fk8n0w5j4" path="res://characters/Player/player_spriteframes.tres" id="1_mqu6j"]
+[ext_resource type="Script" uid="uid://b41lbk1i831ny" path="res://characters/Player/Weapon.gd" id="3_j7dd2"]
+[ext_resource type="Resource" uid="uid://iq7air1kaewm" path="res://Resources/Weapon_types/base_weapon.tres" id="4_yrol7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3eadt"]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_8gp0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 3)
+shape = SubResource("CapsuleShape2D_3eadt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_mqu6j")
+animation = &"player_idle"
+autoplay = "player_idle"
+frame_progress = 0.878502
+
+[node name="Weapon" type="Node2D" parent="."]
+position = Vector2(6, 7)
+script = ExtResource("3_j7dd2")
+weapon_data = ExtResource("4_yrol7")
