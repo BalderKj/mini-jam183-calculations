@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 
 var health: float
+var damage: int
 var speed: float
 var target : Node2D
 
@@ -21,6 +22,7 @@ func _ready() -> void:
 func apply_stats():
 	speed = stats.speed
 	health = stats.health
+	damage = stats.damage
 	
 	
 func _physics_process(_delta):
@@ -46,3 +48,17 @@ func update_animation(direction: Vector2) -> void:
 	elif not enemy_legs.is_playing():
 		enemy_legs.play()
 	enemy_top.play(enum_name + "_bob")
+
+func take_damage(amount):
+	health -= amount
+	damage_effect()
+	
+	if health <= 0:
+		queue_free()
+		#more death logic here
+	
+	
+func damage_effect():
+	var tween = create_tween()
+	enemy_top.modulate = Color(2, 2, 2) 
+	tween.tween_property(enemy_top, "modulate", Color(1,1,1), 0.15)

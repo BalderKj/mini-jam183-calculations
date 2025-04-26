@@ -6,8 +6,8 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhupr"]
 
-[node name="Enemy" type="CharacterBody2D"]
-collision_layer = 0
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_v3fu7")
 stats = ExtResource("2_5shbe")

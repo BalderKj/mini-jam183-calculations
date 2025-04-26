@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_8y5i0")
 name = "Base_weapon"
-damage = 1
+damage = 5
 fire_rate = 2.0
 projectile_scene = ExtResource("1_1o3u6")
 spread = 0.0

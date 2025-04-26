@@ -4,6 +4,7 @@ extends Resource
 @export var name: String
 @export var health: float
 @export var speed: float
+@export var damage: int = 10
 @export var type: types
 
 enum types {

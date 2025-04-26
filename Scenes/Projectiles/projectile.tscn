@@ -6,6 +6,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_d4467"]
 
 [node name="Projectile" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_aihi3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -14,3 +16,5 @@ texture = ExtResource("2_c3q3r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CircleShape2D_d4467")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

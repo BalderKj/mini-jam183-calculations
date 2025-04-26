@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf56jk15qq58k"]
+
+[ext_resource type="Script" uid="uid://cgqfdx2x6fgfq" path="res://scripts/game_over_menu.gd" id="1_arass"]
+
+[sub_resource type="Theme" id="Theme_arass"]
+Button/colors/font_color = Color(0.798655, 0.167671, 0.277489, 1)
+Label/colors/font_color = Color(0.8, 0.168627, 0.278431, 1)
+
+[node name="GameOverMenu" type="Control"]
+process_mode = 3
+z_index = 99
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_arass")
+script = ExtResource("1_arass")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Game Over (Placeholder)"
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

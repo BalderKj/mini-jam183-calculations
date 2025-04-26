@@ -7,5 +7,6 @@ script = ExtResource("1_prvym")
 name = "number 3"
 health = 10.0
 speed = 50.0
+damage = 2
 type = 3
 metadata/_custom_type_script = "uid://bhptr3a3jbtcv"
