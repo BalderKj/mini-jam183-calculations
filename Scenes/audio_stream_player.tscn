@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://diag5tw6yyff5"]
-
-[ext_resource type="AudioStream" uid="uid://dtmhnpghwwsc3" path="res://Audio/Dune Pt 2.mp3" id="1_jxntt"]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
-process_mode = 3
-stream = ExtResource("1_jxntt")
-autoplay = true

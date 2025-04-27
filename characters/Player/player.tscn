@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://k8vfqyh2iw87" path="res://Art/minijam183/player/weapons/weapons.png" id="6_fg313"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3eadt"]
-radius = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5nx12"]
 size = Vector2(7, 26)
@@ -154,7 +153,6 @@ _data = {
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrol7"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_layer = 3
 script = ExtResource("1_8gp0o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -201,7 +199,6 @@ libraries = {
 }
 
 [node name="Hitbox" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 2
 

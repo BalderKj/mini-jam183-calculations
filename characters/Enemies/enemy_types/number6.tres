@@ -6,7 +6,6 @@
 script = ExtResource("1_r04dx")
 name = "number 6"
 health = 10.0
-speed = 150.0
-damage = 1
+speed = 50.0
 type = 6
 metadata/_custom_type_script = "uid://bhptr3a3jbtcv"

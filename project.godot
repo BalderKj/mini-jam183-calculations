@@ -14,10 +14,6 @@ config/name="Mini-jam-2D"
 run/main_scene="uid://ckblfkn0gi0p8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
-[autoload]
-
-GlobalAudioStreamPlayer="*res://Scenes/audio_stream_player.tscn"
-
 [display]
 
 window/size/viewport_width=1280
