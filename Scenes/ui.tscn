@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ph3nxscl13kb"]
+
+[ext_resource type="Theme" uid="uid://nkmusoqy4meh" path="res://Resources/UI_theme.tres" id="1_jxero"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_jxero")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 176.0
+offset_bottom = 16.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Health: 100"
