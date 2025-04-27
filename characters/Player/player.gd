@@ -1,10 +1,13 @@
 extends CharacterBody2D
+class_name Player
 
 
 @export var move_speed: float = 200.0
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var weapon: Node2D = $Weapon
+@onready var range_wpn: Node2D = $"Range-wpn"
+@onready var melee_wpn: Node2D = $"Melee-wpn"
+
 @onready var game_over_menu: Control = $GameOverMenu
 
 @export var max_health := 100
@@ -24,9 +27,10 @@ var healthpoints: int = max_health:
 
 func _process(_delta):
 	var mouse_pos = get_global_mouse_position()
-	weapon.look_at(mouse_pos)
+	range_wpn.look_at(mouse_pos)
 	if Input.is_action_pressed("fire"):
-		weapon.fire()
+		#range_wpn.fire() #disabled range wpn for now
+		melee_wpn.fire()
 		
 func _physics_process(delta: float) -> void:
 	var input_vector = Vector2.ZERO

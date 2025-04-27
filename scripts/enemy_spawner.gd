@@ -1,18 +1,20 @@
 extends Node
+class_name EnemySpawner
 
 @export var enemy_scene: PackedScene
 @export var spawn_entries: Array[EnemySpawnEntry]
 @export var enemies_per_wave: int = 10
 @export var time_between_waves: float = 5.0
 @export var spawn_radius: float = 300.0
+@export var wave_count: int = 3
 
 
 var wave_timer := 0.0
-var current_wave := 0
+@export var current_wave := 0
 
 func _process(delta):
 	wave_timer -= delta
-	if wave_timer <= 0.0:
+	if wave_timer <= 0.0 and current_wave < wave_count:
 		start_wave()
 		wave_timer = time_between_waves
 		

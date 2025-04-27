@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_di6wg")
 name = "number 2"
-health = 10.0
+health = 25.0
 speed = 50.0
 damage = 10
 type = 2

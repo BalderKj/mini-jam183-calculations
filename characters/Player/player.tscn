@@ -1,12 +1,154 @@
-[gd_scene load_steps=8 format=3 uid="uid://coh7nq8uwm8pf"]
+[gd_scene load_steps=15 format=3 uid="uid://coh7nq8uwm8pf"]
 
 [ext_resource type="Script" uid="uid://b8pqgotoxclup" path="res://characters/Player/player.gd" id="1_8gp0o"]
 [ext_resource type="SpriteFrames" uid="uid://dek1fk8n0w5j4" path="res://characters/Player/player_spriteframes.tres" id="1_mqu6j"]
 [ext_resource type="Script" uid="uid://b41lbk1i831ny" path="res://characters/Player/Weapon.gd" id="3_j7dd2"]
 [ext_resource type="Resource" uid="uid://iq7air1kaewm" path="res://Resources/Weapon_types/base_weapon.tres" id="4_yrol7"]
 [ext_resource type="PackedScene" uid="uid://bf56jk15qq58k" path="res://Scenes/game_over_menu.tscn" id="5_b405y"]
+[ext_resource type="Script" uid="uid://c1pbyibahimgi" path="res://characters/Player/melee_wpn.gd" id="5_kidiw"]
+[ext_resource type="Texture2D" uid="uid://k8vfqyh2iw87" path="res://Art/minijam183/player/weapons/weapons.png" id="6_fg313"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3eadt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nx12"]
+size = Vector2(7, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq704"]
+atlas = ExtResource("6_fg313")
+region = Rect2(12, 3, 8, 28)
+
+[sub_resource type="Animation" id="Animation_kidiw"]
+resource_name = "sword_anim"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0990286, 0.31, 0.399702),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.399702),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(20, 0), Vector2(20, -15), Vector2(35, 0), Vector2(20, 15), Vector2(15, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.399702),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.5708, -0.785398, 1.5708, 3.49066, 1.5708]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.399702),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1.6, 1.6), Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:can_attack")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_fg313"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(15, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:can_attack")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5nx12"]
+_data = {
+&"RESET": SubResource("Animation_fg313"),
+&"sword_anim": SubResource("Animation_kidiw")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrol7"]
 
@@ -23,10 +165,38 @@ animation = &"player_idle"
 autoplay = "player_idle"
 frame_progress = 0.486666
 
-[node name="Weapon" type="Node2D" parent="."]
+[node name="Range-wpn" type="Node2D" parent="."]
 position = Vector2(6, 7)
 script = ExtResource("3_j7dd2")
 weapon_data = ExtResource("4_yrol7")
+
+[node name="Melee-wpn" type="Node2D" parent="." node_paths=PackedStringArray("sword_area")]
+script = ExtResource("5_kidiw")
+damage = 10
+sword_area = NodePath("SwordArea")
+orbit_radius = 5.0
+
+[node name="SwordArea" type="Area2D" parent="Melee-wpn"]
+position = Vector2(15, 0)
+rotation = 1.5708
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Melee-wpn/SwordArea"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_5nx12")
+
+[node name="Sprite2D" type="Sprite2D" parent="Melee-wpn/SwordArea"]
+z_index = 10
+position = Vector2(0, -7)
+texture = SubResource("AtlasTexture_jq704")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Melee-wpn"]
+root_node = NodePath("../SwordArea")
+libraries = {
+&"": SubResource("AnimationLibrary_5nx12")
+}
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 2
@@ -39,5 +209,6 @@ shape = SubResource("CapsuleShape2D_yrol7")
 [node name="GameOverMenu" parent="." instance=ExtResource("5_b405y")]
 visible = false
 
+[connection signal="body_entered" from="Melee-wpn/SwordArea" to="Melee-wpn" method="_on_sword_area_body_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
