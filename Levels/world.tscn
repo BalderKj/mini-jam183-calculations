@@ -1,13 +1,21 @@
-[gd_scene load_steps=10 format=4 uid="uid://ckblfkn0gi0p8"]
+[gd_scene load_steps=18 format=4 uid="uid://ckblfkn0gi0p8"]
 
 [ext_resource type="PackedScene" uid="uid://coh7nq8uwm8pf" path="res://characters/Player/player.tscn" id="2_kycxd"]
+[ext_resource type="PackedScene" uid="uid://ph3nxscl13kb" path="res://Scenes/ui.tscn" id="3_4eob5"]
 [ext_resource type="PackedScene" uid="uid://bafxrp63n1hpa" path="res://characters/Enemies/enemy.tscn" id="3_pa6j6"]
 [ext_resource type="PackedScene" uid="uid://s5u1n4v3d4d8" path="res://Scenes/enemy_spawner.tscn" id="3_x5oxt"]
 [ext_resource type="Script" uid="uid://bg7neswcnsykv" path="res://scripts/enemy_spawn_entry.gd" id="5_vqnaq"]
 [ext_resource type="Resource" uid="uid://2tdndtacc1um" path="res://Resources/Spawn_entries/number0_spawn.tres" id="6_rljl1"]
 [ext_resource type="Resource" uid="uid://br87encl0dfx1" path="res://Resources/Spawn_entries/number1_spawn.tres" id="7_44brb"]
 [ext_resource type="Resource" uid="uid://daooq5m3elt6k" path="res://Resources/Spawn_entries/number2_spawn.tres" id="8_ju8gl"]
+[ext_resource type="Resource" uid="uid://dfun2sv14ol53" path="res://Resources/Spawn_entries/number3_spawn.tres" id="9_4eob5"]
 [ext_resource type="PackedScene" uid="uid://cnayatcjlqx61" path="res://Scenes/game_controller.tscn" id="9_06jdw"]
+[ext_resource type="Resource" uid="uid://duir0j8oeee50" path="res://Resources/Spawn_entries/number4_spawn.tres" id="10_ikoig"]
+[ext_resource type="Resource" uid="uid://baoxb66ddlinh" path="res://Resources/Spawn_entries/number5_spawn.tres" id="11_oyb16"]
+[ext_resource type="Resource" uid="uid://dq2mfqvclafu2" path="res://Resources/Spawn_entries/number6_spawn.tres" id="12_43wwi"]
+[ext_resource type="Resource" uid="uid://bo3wflw3yyb50" path="res://Resources/Spawn_entries/number7_spawn.tres" id="13_gtojq"]
+[ext_resource type="Resource" uid="uid://b8emddbxaotff" path="res://Resources/Spawn_entries/number8_spawn.tres" id="14_p3ug2"]
+[ext_resource type="Resource" uid="uid://mq1l0m40l084" path="res://Resources/Spawn_entries/number9_spawn.tres" id="15_8mbvr"]
 [ext_resource type="TileSet" uid="uid://cwh5t23vqhr4s" path="res://Tilesets/4-color-world.tres" id="15_44brb"]
 
 [node name="World" type="Node"]
@@ -29,9 +37,14 @@ position = Vector2(0, -1)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_x5oxt")]
 enemy_scene = ExtResource("3_pa6j6")
-spawn_entries = Array[ExtResource("5_vqnaq")]([ExtResource("6_rljl1"), ExtResource("7_44brb"), ExtResource("8_ju8gl")])
+spawn_entries = Array[ExtResource("5_vqnaq")]([ExtResource("6_rljl1"), ExtResource("7_44brb"), ExtResource("8_ju8gl"), ExtResource("9_4eob5"), ExtResource("10_ikoig"), ExtResource("11_oyb16"), ExtResource("12_43wwi"), ExtResource("13_gtojq"), ExtResource("14_p3ug2"), ExtResource("15_8mbvr")])
 enemies_per_wave = 15
+time_between_waves = 15.0
 
 [node name="GameController" parent="." node_paths=PackedStringArray("waveSpawner", "player") instance=ExtResource("9_06jdw")]
 waveSpawner = NodePath("../EnemySpawner")
 player = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("3_4eob5")]

@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://nkmusoqy4meh"]
+
+[ext_resource type="FontFile" uid="uid://dqehtb8dpk4vq" path="res://Art/minijam183/Press_Start_2P/PressStart2P-Regular.ttf" id="1_2imby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dsdey"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+
+[resource]
+default_font = ExtResource("1_2imby")
+Button/colors/font_color = Color(0.798655, 0.167671, 0.277489, 1)
+Label/colors/font_color = Color(0.8, 0.168627, 0.278431, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_2imby")
+Label/styles/normal = SubResource("StyleBoxEmpty_dsdey")

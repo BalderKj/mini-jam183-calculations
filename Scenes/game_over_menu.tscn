@@ -1,24 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf56jk15qq58k"]
+[gd_scene load_steps=3 format=3 uid="uid://bf56jk15qq58k"]
 
 [ext_resource type="Script" uid="uid://cgqfdx2x6fgfq" path="res://scripts/game_over_menu.gd" id="1_arass"]
-[ext_resource type="FontFile" uid="uid://dqehtb8dpk4vq" path="res://Art/minijam183/Press_Start_2P/PressStart2P-Regular.ttf" id="1_i22rp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dsdey"]
-
-[sub_resource type="Theme" id="Theme_arass"]
-default_font = ExtResource("1_i22rp")
-Button/colors/font_color = Color(0.798655, 0.167671, 0.277489, 1)
-Label/colors/font_color = Color(0.8, 0.168627, 0.278431, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/line_spacing = 3
-Label/constants/outline_size = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/constants/shadow_outline_size = 1
-Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("1_i22rp")
-Label/styles/normal = SubResource("StyleBoxEmpty_dsdey")
+[ext_resource type="Theme" uid="uid://nkmusoqy4meh" path="res://Resources/UI_theme.tres" id="1_i22rp"]
 
 [node name="GameOverMenu" type="Control"]
 process_mode = 3
@@ -31,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_arass")
+theme = ExtResource("1_i22rp")
 script = ExtResource("1_arass")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
